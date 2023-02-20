@@ -1,6 +1,12 @@
 # Netlify deploy of the following Blue Collar Coder tutorial:
 https://www.youtube.com/watch?v=gi4c7fbeURc
 
+# Netlify deploy steps
+1. npx astro add netlify
+2. npm run build
+3. netlify init
+4. netlify deploy
+
 # Astro Starter Kit: Minimal
 
 ```
