@@ -43,8 +43,7 @@ const videoSchema = defineCollection({
 
 const roadMapSchema = defineCollection({
   schema: z.object({
-    title: z.string(),
-    videos: z.array(z.nativeEnum(VideoIDsType)),
+    title: z.string()
   }),
 });
 
