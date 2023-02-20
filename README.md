@@ -5,7 +5,7 @@ https://www.youtube.com/watch?v=gi4c7fbeURc
 1. npx astro add netlify
 2. npm run build
 3. netlify init
-4. netlify deploy
+4. netlify deploy (important: use dist as the folder)
 
 # Astro Starter Kit: Minimal
 
