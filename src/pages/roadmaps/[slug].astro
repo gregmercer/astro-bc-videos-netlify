@@ -17,10 +17,11 @@ export async function getStaticPaths() {
   }))
 }
 
-const { render } = Astro.props
+const { data, render } = Astro.props;
+const roadmap_title = data.title.toLowerCase();
 
 const videos = await getCollection('videos', ({ data }) => {
-  return data.roadmap === 'typescript';
+  return data.roadmap === roadmap_title;
 });
 
 const { Content } = await render()
