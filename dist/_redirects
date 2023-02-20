@@ -1,0 +1,5 @@
+/                  /index.html                   200
+/search.json       /.netlify/functions/entry     200
+/roadmaps/:slug    /roadmaps/:slug/index.html    200
+/search            /.netlify/functions/entry     200
+/videos/:slug      /videos/:slug/index.html      200

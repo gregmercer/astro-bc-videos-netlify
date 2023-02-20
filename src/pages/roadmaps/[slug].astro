@@ -1,0 +1,35 @@
+---
+export const prerender = true;
+
+import createSlug from '../lib/createSlug';
+
+import { CollectionEntry, getCollection } from 'astro:content'
+
+import Layout from '../../layouts/Layout.astro';
+import VideoGrid from '../../components/VideoGrid';
+import createSlug from '../../lib/createSlug';
+
+export async function getStaticPaths() {
+  const roadmap = await getCollection('roadmaps')
+  return roadmap.map((roadmap) => ({
+    params: { slug: createSlug(roadmap.data.title) },
+    props: roadmap
+  }))
+}
+
+const { render } = Astro.props
+
+const videos = await getCollection('videos', ({ data }) => {
+  return data.roadmap === 'typescript';
+});
+
+const { Content } = await render()
+---
+
+<Layout>
+  <div class="prose prose-xl">
+    <Content />
+  </div>
+
+  <VideoGrid videos={videos} />
+</Layout>
